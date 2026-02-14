@@ -2,10 +2,6 @@
 
 A unified platform for managing clinic operations including appointments, patients, inventory, and staff with intelligent automation.
 
-![MedFlow Dashboard](https://img.shields.io/badge/Status-Active-success)
-![Python](https://img.shields.io/badge/Python-3.11+-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0-green)
-
 ## 🌟 Features
 
 - 📅 **Smart Appointment Booking** - Patients can book appointments with automated confirmations
@@ -21,14 +17,6 @@ A unified platform for managing clinic operations including appointments, patien
 - **Database:** MongoDB
 - **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
 - **Automation:** Custom Python automation engine
-
-## 📸 Screenshots
-
-### Dashboard
-![Dashboard](https://via.placeholder.com/800x400?text=Dashboard+Screenshot)
-
-### Appointment Booking
-![Booking](https://via.placeholder.com/800x400?text=Booking+Screenshot)
 
 ## 🛠️ Installation & Setup
 
