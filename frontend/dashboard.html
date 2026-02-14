@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MedFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>🏥 MedFlow Dashboard</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="staff.html">Staff Panel</a>
+            <a href="setup.html">Setup</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h2 style="margin-bottom: 2rem; color: var(--dark);">Clinic Operations Overview</h2>
+        
+        <div class="dashboard-grid">
+            <div class="stat-card">
+                <h3>Today's Appointments</h3>
+                <div class="number" id="todayAppointments">0</div>
+                <div class="subtitle">Scheduled for today</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>New Patient Inquiries</h3>
+                <div class="number" id="newPatients">0</div>
+                <div class="subtitle">Awaiting response</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending Appointments</h3>
+                <div class="number" id="pendingAppointments">0</div>
+                <div class="subtitle">Not yet completed</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>Inventory Alerts</h3>
+                <div class="number" id="inventoryAlerts">0</div>
+                <div class="subtitle">Items need reordering</div>
+            </div>
+        </div>
+
+        <div id="alertsContainer"></div>
+
+        <div class="table-container" style="margin-top: 2rem;">
+            <h3>Recent Appointments</h3>
+            <table id="recentAppointments">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Doctor</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="6" class="loading">Loading data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Setup - MedFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>⚙️ Clinic Setup</h1>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Setup Your Clinic</h2>
+            <p style="margin-bottom: 2rem; color: #6b7280;">Configure your clinic to start operations</p>
+            
+            <form id="setupForm">
+                <div class="form-group">
+                    <label>Clinic Name *</label>
+                    <input type="text" name="clinic_name" required placeholder="MedFlow Health Center">
+                </div>
+
+                <div class="form-group">
+                    <label>Working Hours *</label>
+                    <input type="text" name="working_hours" required placeholder="Mon-Fri: 9AM - 6PM">
+                </div>
+
+                <div class="form-group">
+                    <label>Services Offered (comma separated) *</label>
+                    <textarea name="services" rows="4" required placeholder="General Consultation, Vaccination, Lab Tests, Emergency Care"></textarea>
+                </div>
+
+                <button type="submit" class="btn">Activate Clinic</button>
+            </form>
+
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8000/api';
+
+        document.getElementById('setupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = {
+                clinic_name: formData.get('clinic_name'),
+                working_hours: formData.get('working_hours'),
+                services: formData.get('services').split(',').map(s => s.trim())
+            };
+            
+            try {
+                const response = await fetch(`${API_URL}/setup`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                document.getElementById('message').innerHTML = `
+                    <div class="message-box alert-success">
+                        ✅ ${result.message}<br>
+                        🔔 ${result.automation}
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 2000);
+                
+            } catch (error) {
+                document.getElementById('message').innerHTML = `
+                    <div class="message-box alert-danger">
+                        ❌ Error: ${error.message}
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

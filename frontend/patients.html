@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Inquiries - MedFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>👥 Patient Inquiries</h1>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="staff.html">Appointments</a>
+            <a href="patients.html">Inquiries</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h2 style="margin-bottom: 2rem;">Patient Messages</h2>
+        
+        <div class="table-container">
+            <table id="patientsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="6" class="loading">Loading inquiries...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/patients.js"></script>
+</body>
+</html>

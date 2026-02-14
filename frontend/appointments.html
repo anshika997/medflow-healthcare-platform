@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - MedFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>🏥 MedFlow</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="appointments.html">Book Appointment</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Book Your Appointment</h2>
+            <form id="appointmentForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="patient_name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" name="phone" required placeholder="+1 234 567 8900">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="email" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Appointment Type *</label>
+                    <select name="appointment_type" required>
+                        <option value="">Select appointment type</option>
+                        <option value="General Consultation">General Consultation</option>
+                        <option value="Follow-up Visit">Follow-up Visit</option>
+                        <option value="Vaccination">Vaccination</option>
+                        <option value="Health Checkup">Health Checkup</option>
+                        <option value="Lab Tests">Lab Tests</option>
+                        <option value="Emergency">Emergency</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Preferred Date *</label>
+                        <input type="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Time *</label>
+                        <input type="time" name="time" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Doctor *</label>
+                    <select name="doctor" required>
+                        <option value="">Select doctor</option>
+                        <option value="Dr. Sarah Johnson">Dr. Sarah Johnson (General Physician)</option>
+                        <option value="Dr. Michael Chen">Dr. Michael Chen (Cardiologist)</option>
+                        <option value="Dr. Emily Davis">Dr. Emily Davis (Pediatrician)</option>
+                        <option value="Dr. Robert Wilson">Dr. Robert Wilson (Dentist)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Book Appointment</button>
+            </form>
+
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <script src="js/appointments.js"></script>
+</body>
+</html>
